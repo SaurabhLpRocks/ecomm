@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "ecomm-ui": "apps/ecomm-ui",
+    "ecomm-ui-e2e": "apps/ecomm-ui-e2e"
+  }
+}

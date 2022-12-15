@@ -1,0 +1,150 @@
+// @forward 'shared-ui/src/lib/styles/variables';
+@use '@angular/material' as mat;
+// @import '~@angular/material';
+// @include mat.core();
+
+$primary: #153c73;
+$accent: #fdd835;
+$success: #5aa454;
+$danger: #c00000;
+$warning: #ffc116;
+
+$light-primary-palette: (
+  50: #ede0e0,
+  100: #d1b3b3,
+  200: #b38080,
+  300: #944d4d,
+  400: #7d2626,
+  500: #660000,
+  600: #5e0000,
+  700: #530000,
+  800: #490000,
+  900: #380000,
+  A100: #ff6e6e,
+  A200: #ff3b3b,
+  A400: #ff0808,
+  A700: #ee0000,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$light-accent-palette: (
+  50: #e0f5f5,
+  100: #b3e6e6,
+  200: #80d6d6,
+  300: #4dc5c5,
+  400: #26b8b8,
+  500: #00acac,
+  600: #00a5a5,
+  700: #009b9b,
+  800: #009292,
+  900: #008282,
+  A100: #afffff,
+  A200: #7cffff,
+  A400: #49ffff,
+  A700: #30ffff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$dark-primary-palette: (
+  50: #f6faf5,
+  100: #e9f3e5,
+  200: #dbebd4,
+  300: #cce3c2,
+  400: #c1ddb5,
+  500: #b6d7a8,
+  600: #afd3a0,
+  700: #a6cd97,
+  800: #9ec78d,
+  900: #8ebe7d,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #e7ffde,
+  A700: #d4ffc4,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$dark-accent-palette: (
+  50: #f1eff8,
+  100: #ddd8ed,
+  200: #c7bee1,
+  300: #b0a3d5,
+  400: #9f90cc,
+  500: #8e7cc3,
+  600: #8674bd,
+  700: #7b69b5,
+  800: #715fae,
+  900: #5f4ca1,
+  A100: #fefeff,
+  A200: #d6cbff,
+  A400: #ae98ff,
+  A700: #9a7fff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+@mixin card-position() {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}

@@ -1,0 +1,22 @@
+<mat-toolbar class="header" *subscribe="isLightTheme$ as isLightTheme; let error = error">
+  <button mat-icon-button (click)="toggleSideNavVisibility()">
+    <mat-icon [matTooltip]="collapse === true ? 'Hide' : 'Show'" (click)="collapse = !collapse">menu</mat-icon>
+  </button>
+  <!-- <img src="../../../../assets/img/app-new-logo.png" class="logo" alt="logo" /> -->
+  <!-- <fa-icon [icon]="faHandHoldingUsd" class="logo" size="2x" [spin]="true"></fa-icon> -->
+  <!-- <span>Inbox</span> -->
+  <span class="spacer"></span>
+  <mat-slide-toggle [color]="'warn'" [checked]="isLightTheme" (change)="toggleDarkTheme($event.checked)">{{
+    isLightTheme ? 'Light Theme' : 'Dark Theme'
+  }}</mat-slide-toggle>
+  <span class="header-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>mail_outline</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon [matBadge]="notificationCount" [matBadgeHidden]="notificationCount === 0" matBadgeColor="warn"> notifications_none</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Logout" (click)="logout()">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</mat-toolbar>

@@ -1,0 +1,56 @@
+{
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "turboConsoleLog.quote": "'",
+  "eslint.validate": ["javascript", "typescript"],
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 140,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnPaste": false,
+  "cSpell.words": [
+    "cacheable",
+    "commitlint",
+    "Datatable",
+    "Deletable",
+    "devkit",
+    "Dropdown",
+    "endregion",
+    "fa",
+    "fontawesome",
+    "fortawesome",
+    "loadoff",
+    "minlength",
+    "ngcc",
+    "ngneat",
+    "nrwl",
+    "SAURABH",
+    "serializers",
+    "Sidenav",
+    "Textbox"
+  ],
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "node_modules": false,
+    "package-lock.json": false,
+    "**/node_modules": false
+  },
+  "editor.linkedEditing": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "csharp.referencesCodeLens.enabled": true,
+  "debug.terminal.clearBeforeReusing": true,
+  "files.eol": "\r\n",
+  "explorerExclude.backup": {}
+  // "angular.view-engine": true
+}

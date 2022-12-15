@@ -1,0 +1,8 @@
+<ng-container *subscribe="isLoggedIn$ as isLoggedIn; let error = error">
+  <app-default-layout *ngIf="isLoggedIn; else authBlock"></app-default-layout>
+  <ng-template #authBlock>
+    <div class="auth-container" *subscribe="isLightTheme$ as isLightTheme; let error = error" [ngClass]="{ 'light-theme': isLightTheme }">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,34 @@
+<div *subscribe="isLightTheme$ as isLightTheme; let error = error" [ngClass]="{ 'light-theme': isLightTheme }">
+  <ng-container *subscribe="isLoggedIn$ as isLoggedIn; let error = error">
+    <app-header></app-header>
+    <mat-sidenav-container
+      #sidenavContainer
+      class="sidenav-container overflow-hidden"
+      *subscribe="shouldOpenSideNav$ as isSideNavOpen; let error = error"
+    >
+      <mat-sidenav
+        *ngIf="isLoggedIn"
+        class="mat-elevation-z8"
+        [fixedInViewport]="false"
+        [fixedTopGap]="60"
+        [fixedBottomGap]="60"
+        mode="side"
+        opened="{{ isSideNavOpen }}"
+      >
+        <app-sidebar></app-sidebar>
+      </mat-sidenav>
+
+      <mat-sidenav-content
+        #sidenavContent
+        *subscribe="isSideNavExpanded$ as isSideNavExpanded; let error = error"
+        [@onMainContentChange]="mainContentAnimation$ | async"
+        [ngClass]="isSideNavOpen ? 'margin-left' : 'no-margin-left'"
+      >
+        <div class="main_content">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+    <app-footer></app-footer>
+  </ng-container>
+</div>

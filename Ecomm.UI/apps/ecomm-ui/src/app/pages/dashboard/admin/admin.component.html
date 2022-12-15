@@ -1,0 +1,16 @@
+<div class="grid-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <font class="">All Products</font>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="start center" style="height: 500px">
+          <app-shared-md-table-card [tableConfig$]="productsTable$" [isLoading]="false"></app-shared-md-table-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

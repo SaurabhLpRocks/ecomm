@@ -1,0 +1,40 @@
+@use '../../styles/theme' as theme;
+.menu-item-link {
+  padding: 0;
+}
+
+.menuItemName {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.menu-item-text-container {
+  padding: 0 19px;
+}
+
+fa-icon {
+  margin: auto;
+  font-size: 14px;
+}
+
+mat-icon {
+  margin: auto;
+  font-size: 14px;
+}
+
+.menuExpandIcon {
+  margin-top: 5px;
+}
+
+.active {
+  @include theme.get-theme-color-property(background, primary);
+  @include theme.get-theme-color-property(color, primary, default-contrast);
+  &:hover {
+    @include theme.get-theme-color-property(background, primary);
+    @include theme.get-theme-color-property(color, primary, default-contrast);
+  }
+  &:focus {
+    @include theme.get-theme-color-property(background, primary);
+    @include theme.get-theme-color-property(color, primary, default-contrast);
+  }
+}

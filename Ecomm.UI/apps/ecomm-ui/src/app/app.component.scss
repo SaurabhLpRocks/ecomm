@@ -1,0 +1,7 @@
+@use '@theme/styles/theme' as theme;
+
+.auth-container {
+  width: 100%;
+  height: calc(100vh);
+  @include theme.get-theme-color-property(background, primary, 500);
+}

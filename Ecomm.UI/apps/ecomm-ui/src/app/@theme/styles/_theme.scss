@@ -1,0 +1,110 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@forward './variables';
+@use './variables' as variables;
+
+$light-primary: mat.define-palette(variables.$light-primary-palette);
+$light-accent: mat.define-palette(variables.$light-accent-palette);
+$light-warn: mat.define-palette(mat.$red-palette);
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+      warn: $light-warn,
+    ),
+  )
+);
+
+$custom-typography: mat.define-typography-config(
+  // Specify "Lato sans-serif" as the default font family for all levels.
+  $font-family: '"Lato", sans-serif;'
+);
+
+$dark-primary: mat.define-palette(variables.$dark-primary-palette);
+$dark-accent: mat.define-palette(variables.$dark-accent-palette);
+$dark-warn: mat.define-palette(mat.$red-palette);
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+    typography: $custom-typography,
+    density: 0,
+  )
+);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.all-component-themes($dark-theme);
+
+// Include the dark color styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+}
+
+mat-card-title {
+  font {
+    font-size: 17px;
+    font-weight: bold;
+    // @include get-theme-color-property(color, primary);
+  }
+}
+
+/// Gets the CSS property and it's computed value for both light and dark themes.
+///
+/// @param {String} $property The css property to set. ex: background, color, background-color, border-color etc.
+/// @param {String} $color Theme color. Accepted values are: primary, accent, or warn.
+/// @param {String | Number} $hue The hue from the palette to use. If this is a value between 0 and 1, it will be treated as opacity. Ex values: 500, 500-contrast, darker, darker-contrast
+/// @returns {CssProperty} CSS property with it's computed value for the both light and dark themes.
+@mixin get-theme-color-property($property: null, $color: null, $hue: null) {
+  // Get the color config from the theme.
+  $light-color-config: mat.get-color-config($light-theme);
+  // Get the required color palette from the color-config.
+  $light-color-palette: map.get($light-color-config, $color);
+
+  // Get the color config from the theme.
+  $dark-color-config: mat.get-color-config($dark-theme);
+  // Get the required color palette from the color-config.
+  $dark-color-palette: map.get($dark-color-config, $color);
+  @if $hue != null {
+    // Finally get the desired color with the specified hue.
+    $light-color: mat.get-color-from-palette($light-color-palette, $hue);
+
+    // Finally get the desired color with the specified hue.
+    $dark-color: mat.get-color-from-palette($dark-color-palette, $hue);
+    & {
+      #{$property}: $dark-color;
+    }
+
+    .light-theme & {
+      #{$property}: $light-color;
+    }
+  } @else {
+    // Finally get the desired color with the specified hue.
+    $light-color: mat.get-color-from-palette($light-color-palette);
+
+    // Finally get the desired color with the specified hue.
+    $dark-color: mat.get-color-from-palette($dark-color-palette);
+    & {
+      #{$property}: $dark-color;
+    }
+
+    .light-theme & {
+      #{$property}: $light-color;
+    }
+  }
+}
+
+@mixin card-position() {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}

@@ -1,0 +1,8 @@
+{
+  "{apps,libs}/**/*.{ts,json}": [
+    "cd Ecomm.UI && npm run eslint:fix"
+  ],
+  "{apps,libs}/**/*.{ts,json,md,scss,html}": [
+    "cd Ecomm.UI && npm run prettier:fix"
+  ]
+}

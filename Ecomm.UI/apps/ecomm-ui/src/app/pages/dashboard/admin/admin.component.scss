@@ -1,0 +1,42 @@
+@use '../../../@theme/styles/theme' as theme;
+
+.spacer {
+  margin: 10px;
+  width: 5px;
+}
+
+.grid-container {
+  margin: 20px;
+}
+
+button {
+  padding: 28px;
+}
+
+.button-loader {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 25px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+
+.table-container {
+  width: 100%;
+  height: 220px;
+}
+
+.card-menu {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.mat-card-header-text {
+  width: 100%;
+}
+

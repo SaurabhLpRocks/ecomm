@@ -1,0 +1,35 @@
+{
+  "name": "ecomm-ui",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "husky install",
+    "prepare": "husky install",
+    "setup": "npm i && npm run install-ui-and-api-deps",
+    "install-ui-deps": "cd Ecomm.UI && npm i --force",
+    "install-api-deps": "cd Ecomm.API && dotnet restore",
+    "install-ui-and-api-deps": "concurrently \"npm:install-ui-deps\" \"npm:install-api-deps\"",
+    "pre-commit:lint": "lint-staged"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
+    "@typescript-eslint/parser": "5.36.1",
+    "cross-env": "^7.0.3",
+    "concurrently": "^7.6.0",
+    "dotenv": "^10.0.0",
+    "eslint": "8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-class-members": "^1.14.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.2.0",
+    "prettier": "2.6.2"
+  }
+}

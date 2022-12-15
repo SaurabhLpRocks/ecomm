@@ -1,0 +1,143 @@
+{
+  "name": "ecomm-ui",
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ecomm-ui/src",
+  "prefix": "ecomm-ui",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/ecomm-ui",
+        "index": "apps/ecomm-ui/src/index.html",
+        "main": "apps/ecomm-ui/src/main.ts",
+        "polyfills": "apps/ecomm-ui/src/polyfills.ts",
+        "tsConfig": "apps/ecomm-ui/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/ecomm-ui/src/favicon.ico",
+          "apps/ecomm-ui/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "apps/ecomm-ui/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs",
+            "apps/ecomm-ui/src/app/@theme/styles"
+          ]
+        },
+        "scripts": [],
+        "webWorkerTsConfig": "apps/ecomm-ui/tsconfig.worker.json"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "2mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ecomm-ui/src/environments/environment.ts",
+              "with": "apps/ecomm-ui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true
+        },
+        "staging": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ecomm-ui/src/environments/environment.ts",
+              "with": "apps/ecomm-ui/src/environments/environment.staging.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ecomm-ui:build:production"
+        },
+        "development": {
+          "browserTarget": "ecomm-ui:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ecomm-ui:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ecomm-ui/**/*.ts",
+          "apps/ecomm-ui/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/ecomm-ui"
+      ],
+      "options": {
+        "jestConfig": "apps/ecomm-ui/jest.config.ts",
+        "passWithNoTests": true,
+        "webWorkerTsConfig": "apps/ecomm-ui/tsconfig.worker.json"
+      }
+    }
+  },
+  "tags": []
+}

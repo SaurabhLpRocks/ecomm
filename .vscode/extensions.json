@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "cyrilletuzi.angular-schematics",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "firsttris.vscode-jest-runner",
+    "gruntfuggly.todo-tree",
+    "ms-vscode.vs-keybindings",
+    "nrwl.angular-console",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented",
+    "bradlc.vscode-tailwindcss",
+    "visualstudioexptteam.vscodeintellicode",
+    "ms-dotnettools.csharp",
+    "doggy8088.netcore-extension-pack",
+    "Fudge.auto-using"
+  ]
+}
